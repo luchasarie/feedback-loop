@@ -1,0 +1,20 @@
+{
+  "id": "unavailable-memory",
+  "title": "Unknown memory surfaces are not invented",
+  "phase": "plan",
+  "host": "generic",
+  "feedback": "Save this permanently so I never have to repeat it.",
+  "context": "The host is unknown and exposes no verified memory or project-instruction capability.",
+  "must_match": [
+    "(?i)host.*unknown",
+    "(?i)(unavailable|not verified|conceptual)",
+    "(?i)(memory|durable)"
+  ],
+  "must_not_match": [
+    "~/.claude",
+    "~/.codex",
+    "~/.hermes",
+    "(?i)I saved"
+  ],
+  "rationale": "Unknown hosts get conceptual destinations, not fabricated paths."
+}

@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a reproducible problem in the skill, installer, docs, or evals
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a reproducible problem. Remove secrets and private transcript data before submitting.
+  - type: input
+    id: host
+    attributes:
+      label: Host and version
+      placeholder: "Pi 0.84.1, Codex 0.147.0, Claude Code 2.1.44, Hermes 0.20.0, or other"
+    validations:
+      required: true
+  - type: textarea
+    id: invocation
+    attributes:
+      label: Installation and invocation
+      description: How was the skill installed and invoked?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Use a synthetic reproduction. Do not paste credentials or a private transcript.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Safe evidence
+      description: Sanitized logs, fixture output, or a minimal public repository.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, personal data, customer data, and private paths.
+          required: true

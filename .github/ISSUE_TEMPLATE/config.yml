@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/luchasarie/feedback-loop/security/advisories/new
+    about: Report vulnerabilities or unsafe default behavior privately

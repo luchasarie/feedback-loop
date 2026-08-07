@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 430" role="img" aria-labelledby="title desc">
+<title id="title">The Feedback Loop workflow</title>
+<desc id="desc">Feedback moves from heat to signal, evidence, diagnosis, approval, and verified improvement.</desc>
+<defs>
+  <linearGradient id="line" x1="100" y1="0" x2="1340" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4D5E"/><stop offset=".45" stop-color="#FFB24A"/><stop offset="1" stop-color="#63DFD0"/></linearGradient>
+  <linearGradient id="heat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF465B"/><stop offset="1" stop-color="#FF9A3D"/></linearGradient>
+  <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69E6D3"/><stop offset="1" stop-color="#5BA8FF"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#FFFFFF" stroke-opacity=".025"/></pattern>
+</defs>
+<rect width="1440" height="430" rx="30" fill="#0B0E15"/>
+<rect width="1440" height="430" rx="30" fill="url(#grid)"/>
+<rect x="1" y="1" width="1438" height="428" rx="29" fill="none" stroke="#FFFFFF" stroke-opacity=".1" stroke-width="2"/>
+<rect x="120" y="201" width="240" height="8" rx="4" fill="#FF6555"/>
+<rect x="360" y="201" width="240" height="8" fill="#FF8C50"/>
+<rect x="600" y="201" width="240" height="8" fill="#F3AD55"/>
+<rect x="840" y="201" width="240" height="8" fill="#C5C47A"/>
+<rect x="1080" y="201" width="240" height="8" rx="4" fill="#69DCC7"/>
+<g>
+  <circle cx="120" cy="205" r="55" fill="#FF5360"/><circle cx="120" cy="205" r="49" fill="#0F1420"/>
+  <circle cx="360" cy="205" r="55" fill="#FF8150"/><circle cx="360" cy="205" r="49" fill="#0F1420"/>
+  <circle cx="600" cy="205" r="55" fill="#F9AC50"/><circle cx="600" cy="205" r="49" fill="#0F1420"/>
+  <circle cx="840" cy="205" r="55" fill="#D7BE6B"/><circle cx="840" cy="205" r="49" fill="#0F1420"/>
+  <circle cx="1080" cy="205" r="55" fill="#91D49F"/><circle cx="1080" cy="205" r="49" fill="#0F1420"/>
+  <circle cx="1320" cy="205" r="55" fill="#63DFD0"/><circle cx="1320" cy="205" r="49" fill="#0F1420"/>
+</g>
+<g font-family="Inter, ui-sans-serif, system-ui, sans-serif" text-anchor="middle">
+  <text x="120" y="216" fill="url(#heat)" font-size="36" font-weight="800">!</text>
+  <text x="360" y="215" fill="#FF8C50" font-size="29" font-weight="800">Δ</text>
+  <text x="600" y="216" fill="#F9AC50" font-size="36" font-weight="800">≡</text>
+  <text x="840" y="216" fill="#D7BE6B" font-size="34" font-weight="800">≡</text>
+  <path d="m1053 205 10-9 14 14 27-31 11 10-38 43-24-27Z" fill="#91D49F"/>
+  <path d="m1293 205 10-9 14 14 27-31 11 10-38 43-24-27Z" fill="#63DFD0"/>
+
+  <g fill="#F2F4F8" font-size="20" font-weight="750" letter-spacing="1.1">
+    <text x="120" y="108">HEAT</text><text x="360" y="108">SIGNAL</text><text x="600" y="108">EVIDENCE</text><text x="840" y="108">DIAGNOSIS</text><text x="1080" y="108">APPROVAL</text><text x="1320" y="108">IMPROVEMENT</text>
+  </g>
+  <g fill="#A9B3C2" font-size="16" font-weight="450">
+    <text x="120" y="306">Feedback as delivered</text>
+    <text x="360" y="306">Expected vs. observed</text>
+    <text x="600" y="306">Facts before stories</text>
+    <text x="840" y="306">Root cause, not symptom</text>
+    <text x="1080" y="306">Item-scoped consent</text>
+    <text x="1320" y="306">Apply, verify, report</text>
+  </g>
+  <text x="720" y="385" fill="#C6CFDB" font-size="19" font-weight="600">The feedback turn stops at approval. Nothing changes behind your back.</text>
+</g>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "name": "feedback-loop-agent-skill",
+  "version": "1.0.0",
+  "description": "Turn frustration with AI agents into evidence-based, approval-gated system improvement.",
+  "license": "MIT",
+  "author": "Luchas Arie",
+  "keywords": ["agent-skills", "pi-package", "claude-code", "codex", "hermes-agent", "feedback"],
+  "files": ["skills", "prompts", "README.md", "LICENSE"],
+  "pi": {
+    "skills": ["./skills"],
+    "prompts": ["./prompts"]
+  },
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v",
+    "validate": "python3 scripts/validate.py",
+    "eval": "python3 scripts/evaluate.py",
+    "smoke": "python3 scripts/smoke_hosts.py"
+  },
+  "engines": {"node": ">=18"}
+}

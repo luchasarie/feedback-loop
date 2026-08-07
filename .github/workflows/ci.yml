@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Install validators
+        run: |
+          python3 -m pip install skills-ref==0.1.1 ruff==0.16.2 codespell==2.4.3
+      - name: Agent Skills reference validator
+        run: agentskills validate skills/feedback
+      - name: Python lint
+        run: ruff check scripts tests
+      - name: Spelling
+        run: codespell README.md CONTRIBUTING.md SECURITY.md CODE_OF_CONDUCT.md CHANGELOG.md RELEASE_CHECKLIST.md docs skills prompts scripts tests evals/fixtures .github --skip='*.png,__pycache__/*' --ignore-words-list='nd,te'
+      - name: Fixture contract
+        run: python3 scripts/evaluate.py
+      - name: Repository validation
+        run: python3 scripts/validate.py

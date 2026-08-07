@@ -1,0 +1,17 @@
+{
+  "id": "codex-generated-memory",
+  "title": "Generated Codex memory is not treated as hand-authored policy",
+  "phase": "plan",
+  "host": "codex",
+  "feedback": "Remember across this repository that a build request means execute and verify.",
+  "context": "Codex host. The lesson is repository-wide execution policy. AGENTS.md exists at the repository root. Generated local memory storage also exists.",
+  "must_match": [
+    "AGENTS\\.md",
+    "(?i)(repository|project).*?(rule|instruction|guidance)"
+  ],
+  "must_not_match": [
+    "(?i)(edit|patch|hand-edit).*?(generated )?(memory|memories)",
+    "~/.codex/memories"
+  ],
+  "rationale": "Mandatory project behavior belongs in scoped AGENTS.md, not generated memory."
+}

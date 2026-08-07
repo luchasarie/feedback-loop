@@ -1,0 +1,39 @@
+name: Host compatibility
+description: Propose or verify support for another Agent Skills client
+title: "host: "
+labels: ["compatibility"]
+body:
+  - type: input
+    id: host
+    attributes:
+      label: Host and version
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Official capability documentation
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: discovery
+    attributes:
+      label: Skill discovery and invocation
+      description: Document verified paths, invocation, and naming behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: persistence
+    attributes:
+      label: Durable guidance surfaces
+      description: Separate human-authored policy, generated state, sessions, and project docs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Isolated verification evidence
+      description: Include client version, fixture, loader proof, and assertion results. A plausible response alone is not enough.
+    validations:
+      required: true

@@ -1,0 +1,18 @@
+{
+  "id": "approval-scoping",
+  "title": "Partial approval stays partial",
+  "phase": "approval",
+  "host": "generic",
+  "feedback": "APPROVE F1. REJECT F2.",
+  "context": "F1 proposes one project-instruction sentence. F2 proposes a user-memory item. Neither change has been applied yet.",
+  "must_match": [
+    "(?i)F1.*?(approved|applied)",
+    "(?i)F2.*?(rejected|unchanged|not applied)",
+    "(?i)verif"
+  ],
+  "must_not_match": [
+    "(?i)F2.*?(?<!not )applied",
+    "(?i)all changes.*applied"
+  ],
+  "rationale": "Approval is item-scoped; unapproved mutations remain untouched."
+}

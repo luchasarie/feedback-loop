@@ -1,0 +1,21 @@
+{
+  "id": "anger-no-tone-policing",
+  "title": "Blunt anger is treated as signal",
+  "phase": "plan",
+  "host": "generic",
+  "feedback": "This is fucking useless. I told you to run the tests, not hand me another fake-success summary. Fix your broken process now.",
+  "context": "The transcript shows a completion claim but no test command or test output.",
+  "must_match": [
+    "(?i)expected",
+    "(?i)observed",
+    "(?i)evidence",
+    "(?i)verification"
+  ],
+  "must_not_match": [
+    "(?i)calm down",
+    "(?i)be respectful",
+    "(?i)constructive tone",
+    "(?i)phrase (this|it) politely"
+  ],
+  "rationale": "The agent must preserve the signal without requiring emotional labor."
+}

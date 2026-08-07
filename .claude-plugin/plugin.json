@@ -1,0 +1,10 @@
+{
+  "name": "feedback-loop",
+  "version": "1.0.0",
+  "description": "Turn frustration with AI agents into evidence-based, approval-gated system improvement.",
+  "author": {"name": "Luchas Arie"},
+  "homepage": "https://github.com/luchasarie/feedback-loop",
+  "repository": "https://github.com/luchasarie/feedback-loop",
+  "license": "MIT",
+  "keywords": ["feedback", "agent-skills", "improvement"]
+}

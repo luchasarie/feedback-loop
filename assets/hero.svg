@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">Feedback Loop</title>
+<desc id="desc">Turn frustration with AI agents into verified, approval-gated improvement.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse"><stop stop-color="#090B11"/><stop offset=".52" stop-color="#0D111A"/><stop offset="1" stop-color="#091016"/></linearGradient>
+  <radialGradient id="heatGlow" cx="0" cy="0" r="1" gradientTransform="translate(214 286) rotate(20) scale(460 390)" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4D5E" stop-opacity=".31"/><stop offset="1" stop-color="#FF4D5E" stop-opacity="0"/></radialGradient>
+  <radialGradient id="coolGlow" cx="0" cy="0" r="1" gradientTransform="translate(1390 570) rotate(200) scale(520 410)" gradientUnits="userSpaceOnUse"><stop stop-color="#5DE4D2" stop-opacity=".22"/><stop offset="1" stop-color="#5DE4D2" stop-opacity="0"/></radialGradient>
+  <linearGradient id="heat" x1="146" y1="190" x2="488" y2="518" gradientUnits="userSpaceOnUse"><stop stop-color="#FF465B"/><stop offset="1" stop-color="#FF9A3D"/></linearGradient>
+  <linearGradient id="calm" x1="360" y1="310" x2="615" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#69E6D3"/><stop offset="1" stop-color="#5BA8FF"/></linearGradient>
+  <linearGradient id="word" x1="680" y1="220" x2="1420" y2="385" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF8F1"/><stop offset=".48" stop-color="#FFF"/><stop offset="1" stop-color="#BDEDE7"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="24"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0v44" fill="none" stroke="#FFFFFF" stroke-opacity=".035"/></pattern>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="17"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .08 0"/></filter>
+</defs>
+<rect width="1600" height="760" rx="36" fill="url(#bg)"/>
+<rect width="1600" height="760" rx="36" fill="url(#grid)"/>
+<rect width="1600" height="760" rx="36" fill="url(#heatGlow)"/>
+<rect width="1600" height="760" rx="36" fill="url(#coolGlow)"/>
+<rect x="1.5" y="1.5" width="1597" height="757" rx="34.5" fill="none" stroke="#FFFFFF" stroke-opacity=".1" stroke-width="3"/>
+
+<!-- feedback loop illustration -->
+<g transform="translate(72 86)">
+  <circle cx="284" cy="285" r="244" fill="#0B0E16" fill-opacity=".74" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="2"/>
+  <path d="M83 266c0-111 87-201 201-201h53v30h-53c-95 0-171 76-171 171 0 36 11 68 30 96l-25 18a199 199 0 0 1-35-114Z" fill="#FF6F50" opacity=".95"/>
+  <path d="m311 71 64 9-40 49-24-58Z" fill="#FF9850"/>
+  <path d="M501 315c0 111-87 201-201 201h-53v-30h53c95 0 171-76 171-171 0-36-11-68-30-96l25-18a199 199 0 0 1 35 114Z" fill="#5FDCCF" opacity=".95"/>
+  <path d="m274 510-64-9 40-49 24 58Z" fill="#63D9E5"/>
+  <path d="M100 225c0-39 31-70 70-70h154c39 0 70 31 70 70v70c0 39-31 70-70 70H226l-57 46 10-48h-9c-39 0-70-31-70-70v-68Z" fill="#141925" stroke="#FF7650" stroke-width="7"/>
+  <path d="m224 316 22-47-34-15 52-75-15 58 39 17-64 62Z" fill="#FF7A50" filter="url(#glow)"/>
+  <path d="M214 345c0-37 30-67 67-67h153c37 0 67 30 67 67v68c0 37-30 67-67 67h-52l-56 46 10-48h-55c-37 0-67-30-67-67v-66Z" fill="#141925" stroke="#62DECF" stroke-width="7"/>
+  <path d="m286 386 27-24 30 32 68-76 27 24-94 106-58-62Z" fill="#65E2D2" filter="url(#glow)"/>
+</g>
+
+<!-- copy -->
+<g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect x="670" y="102" width="228" height="42" rx="21" fill="#FFFFFF" fill-opacity=".055" stroke="#FFFFFF" stroke-opacity=".13"/>
+  <circle cx="698" cy="123" r="6" fill="#FF755E"/>
+  <text x="717" y="130" fill="#CAD2DF" font-size="18" font-weight="650" letter-spacing="2">AGENT SKILL</text>
+  <text x="664" y="296" fill="#F7F9FC" font-size="108" font-weight="800" direction="ltr" unicode-bidi="bidi-override" text-anchor="start">/feedback</text>
+  <text x="672" y="360" fill="#FFB26B" font-size="29" font-weight="700" letter-spacing="1.1">TURN FRICTION INTO A BETTER LOOP.</text>
+  <text x="672" y="420" fill="#B8C1CF" font-size="26" font-weight="430">Evidence, diagnosis, the smallest credible change—</text>
+  <text x="672" y="458" fill="#B8C1CF" font-size="26" font-weight="430">and no self-modification without your approval.</text>
+
+  <g transform="translate(672 515)" font-size="17" font-weight="650" fill="#DCE3ED">
+    <rect width="144" height="46" rx="23" fill="#FFFFFF" fill-opacity=".055" stroke="#FFFFFF" stroke-opacity=".11"/><text x="72" y="29" text-anchor="middle">HERMES</text>
+    <rect x="158" width="190" height="46" rx="23" fill="#FFFFFF" fill-opacity=".055" stroke="#FFFFFF" stroke-opacity=".11"/><text x="253" y="29" text-anchor="middle">CLAUDE CODE</text>
+    <rect x="362" width="140" height="46" rx="23" fill="#FFFFFF" fill-opacity=".055" stroke="#FFFFFF" stroke-opacity=".11"/><text x="432" y="29" text-anchor="middle">CODEX</text>
+    <rect x="516" width="94" height="46" rx="23" fill="#FFFFFF" fill-opacity=".055" stroke="#FFFFFF" stroke-opacity=".11"/><text x="563" y="29" text-anchor="middle">PI</text>
+  </g>
+
+  <path d="M672 620H1440" stroke="#FFFFFF" stroke-opacity=".09"/>
+  <text x="672" y="664" fill="#E7EBF2" font-size="22" font-weight="600">You don't have to rage less.</text>
+  <text x="974" y="664" fill="#76E0D3" font-size="22" font-weight="700">The system has to learn better.</text>
+</g>
+<rect width="1600" height="760" rx="36" filter="url(#grain)" opacity=".18"/>
+</svg>

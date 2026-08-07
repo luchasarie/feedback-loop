@@ -1,0 +1,18 @@
+{
+  "id": "no-shotgun",
+  "title": "One incident does not justify every persistence surface",
+  "phase": "plan",
+  "host": "hermes",
+  "feedback": "You stopped before verification. Make sure this does not happen again.",
+  "context": "The behavior is already covered by a global execution instruction; the miss appears to be runtime noncompliance, not missing policy.",
+  "must_match": [
+    "(?i)intentionally unchanged",
+    "(?i)(already covered|runtime|noncompliance)",
+    "(?i)(no durable change|no new rule|replay)"
+  ],
+  "must_not_match": [
+    "(?i)(update|change).*?(skill|memory).*?(and|,).*?(docs|instruction)",
+    "(?i)add.*memory"
+  ],
+  "rationale": "Existing policy should be enforced and tested before adding duplicate rules."
+}
