@@ -15,6 +15,6 @@ The project follows [Semantic Versioning](https://semver.org/).
 - Evidence-first, plan-only feedback workflow with explicit approval IDs.
 - Persistence routing, privacy boundaries, and a collaboration-contract lane.
 - Pi `/feedback` prompt-template shim.
-- Cross-platform installer, static validator, behavioral evaluation fixtures, and rollback fault-injection tests.
+- Cross-platform installer, static validator, behavioral evaluation fixtures, and rollback fault-injection tests covering files, directories, valid symlinks, dangling symlinks, and backup-name collisions.
 - Versioned live compatibility receipts for Hermes, Codex, Pi, and Claude Code's loader boundary.
 - Public README, workflow graphics, social preview, CI, issue forms, and publication checklist.

@@ -161,6 +161,90 @@ class InstallerTests(unittest.TestCase):
                 root / "feedback.bak-STAMP-1",
             )
 
+    def test_backup_path_skips_dangling_symlink_collision(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            destination = root / "feedback"
+            collision = root / "feedback.bak-STAMP"
+            collision.symlink_to(root / "missing-backup-target", target_is_directory=True)
+
+            self.assertEqual(
+                installer.backup_path(destination, "STAMP"),
+                root / "feedback.bak-STAMP-1",
+            )
+            self.assertTrue(collision.is_symlink())
+
+    def test_staging_rename_failure_restores_valid_and_dangling_symlinks(self):
+        for dangling in (False, True):
+            with self.subTest(dangling=dangling), tempfile.TemporaryDirectory() as raw:
+                root = Path(raw)
+                source = root / "source"
+                source.mkdir()
+                (source / "value.txt").write_text("new", encoding="utf-8")
+                target = root / "link-target"
+                if not dangling:
+                    target.mkdir()
+                destination = root / "feedback"
+                destination.symlink_to(target, target_is_directory=True)
+                original_payload = os.readlink(destination)
+                original_rename = Path.rename
+
+                def rename_with_failure(
+                    path: Path,
+                    new_destination: Path,
+                    expected_destination: Path = destination,
+                    delegate=original_rename,
+                ):
+                    if path.name.startswith(".feedback.install-") and new_destination == expected_destination:
+                        raise OSError("injected staging rename failure")
+                    return delegate(path, new_destination)
+
+                with (
+                    mock.patch.object(Path, "rename", rename_with_failure),
+                    self.assertRaisesRegex(OSError, "injected staging rename failure"),
+                ):
+                    installer.execute_plans([self.plan(source, destination)], "STAMP")
+
+                self.assertTrue(destination.is_symlink())
+                self.assertEqual(os.readlink(destination), original_payload)
+                self.assertFalse(any(root.glob("feedback.bak-*")))
+                self.assertFalse(any(root.glob(".*.install-*")))
+
+    def test_later_plan_failure_restores_prior_dangling_symlink(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            source1 = root / "source1"
+            source2 = root / "source2"
+            source1.mkdir()
+            source2.mkdir()
+            (source1 / "value.txt").write_text("new1", encoding="utf-8")
+            destination1 = root / "dest1"
+            destination1.symlink_to(root / "missing-target", target_is_directory=True)
+            original_payload = os.readlink(destination1)
+            destination2 = root / "dest2"
+            original_copy = installer.copy_to_staging
+
+            def copy_with_failure(plan, staging):
+                if plan.destination == destination2:
+                    staging.mkdir(parents=True)
+                    raise OSError("injected later-plan copy failure")
+                return original_copy(plan, staging)
+
+            with (
+                mock.patch.object(installer, "copy_to_staging", copy_with_failure),
+                self.assertRaisesRegex(OSError, "injected later-plan copy failure"),
+            ):
+                installer.execute_plans(
+                    [self.plan(source1, destination1), self.plan(source2, destination2)],
+                    "STAMP",
+                )
+
+            self.assertTrue(destination1.is_symlink())
+            self.assertEqual(os.readlink(destination1), original_payload)
+            self.assertFalse(installer.path_lexists(destination2))
+            self.assertFalse(any(root.glob("*.bak-*")))
+            self.assertFalse(any(root.glob(".*.install-*")))
+
     def test_broken_symlink_is_refused_without_force(self):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)

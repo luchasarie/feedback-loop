@@ -49,7 +49,7 @@ An isolated project accepted this repository as a Pi package and registered it i
 ## Static gates
 
 ```text
-python3 -m unittest discover -s tests -v     PASS — 15 tests
+python3 -m unittest discover -s tests -v     PASS — 18 tests
 python3 scripts/evaluate.py                  PASS — 9 fixtures, required coverage present
 python3 scripts/validate.py                  PASS — 293 checks
 agentskills validate skills/feedback         PASS — official reference validator

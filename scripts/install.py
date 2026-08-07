@@ -102,7 +102,7 @@ def target_plans(args: argparse.Namespace) -> list[CopyPlan]:
 def backup_path(destination: Path, stamp: str) -> Path:
     candidate = destination.with_name(f"{destination.name}.bak-{stamp}")
     index = 1
-    while candidate.exists():
+    while path_lexists(candidate):
         candidate = destination.with_name(f"{destination.name}.bak-{stamp}-{index}")
         index += 1
     return candidate
@@ -135,7 +135,7 @@ def rollback_committed(committed: list[tuple[CopyPlan, Path | None]]) -> list[st
         destination = plan.destination
         try:
             remove_path(destination)
-            if backup and backup.exists():
+            if backup and path_lexists(backup):
                 backup.rename(destination)
         except OSError as exc:  # best-effort rollback must continue across targets
             errors.append(f"{destination}: {exc}")
@@ -163,7 +163,7 @@ def execute_plans(plans: list[CopyPlan], stamp: str) -> list[tuple[CopyPlan, Pat
                 remove_path(staging)
             except OSError as exc:
                 recovery_errors.append(f"staging cleanup {staging}: {exc}")
-            if backup and backup.exists():
+            if backup and path_lexists(backup):
                 try:
                     if path_lexists(destination):
                         recovery_errors.append(

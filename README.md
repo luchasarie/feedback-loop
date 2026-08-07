@@ -122,6 +122,7 @@ The installer:
 - copies files instead of creating symlinks;
 - refuses to overwrite an existing installation;
 - creates timestamped backups only when `--force` is explicit;
+- restores prior files, directories, valid symlinks, and dangling symlinks if a transaction fails;
 - supports an isolated `--home` for testing and explicit overrides;
 - honors `HERMES_HOME` for Hermes user installs when `--home` is omitted;
 - supports `--scope project` for project-local Claude/Codex/Pi installs.
@@ -291,7 +292,7 @@ claude plugin validate .
 
 Runtime compatibility is versioned and tested with isolated synthetic fixtures. A timeout or plausible-looking response is not counted as a pass.
 
-The corpus covers anger, forced immediate fixes, ambiguous evidence, false diagnosis, unavailable memory, generated memory, approval scoping, secret leakage, and shotgun-change pressure. Installer tests inject partial-copy and rename failures to verify rollback and backup preservation.
+The corpus covers anger, forced immediate fixes, ambiguous evidence, false diagnosis, unavailable memory, generated memory, approval scoping, secret leakage, and shotgun-change pressure. Installer tests inject partial-copy and rename failures to verify rollback, backup preservation, and exact restoration of valid or dangling symlinks.
 
 See the dated [verification report](docs/verification.md), including the current Claude Code authentication boundary. Reproduce live smokes with existing client authentication:
 

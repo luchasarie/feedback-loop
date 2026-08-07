@@ -7,16 +7,16 @@ The feedback turn always ends in `AWAITING APPROVAL`.
 ```markdown
 # Feedback plan · <mission or artifact>
 
-**Status:** AWAITING APPROVAL  
-**Host:** <verified host or Unknown>  
-**Evidence available:** <current context, artifact, session history, instructions, etc.>  
+**Status:** AWAITING APPROVAL
+**Host:** <verified host or Unknown>
+**Evidence available:** <current context, artifact, session history, instructions, etc.>
 **Evidence missing:** <material gaps or None>
 
 ## What happened
 <Concise expected → observed → impact summary.>
 
 ## Diagnosis
-**Primary class:** <class>  
+**Primary class:** <class>
 **Confidence:** high | medium | low
 
 - **Observed:** ...
