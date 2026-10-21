@@ -20,6 +20,12 @@
 
 ---
 
+## See it in 30 seconds
+
+https://github.com/user-attachments/assets/f34781bd-6d53-463f-bcf6-f2a6d708bd0f
+
+Can't see the video? [Watch the 30-second demo](https://github.com/user-attachments/assets/f34781bd-6d53-463f-bcf6-f2a6d708bd0f).
+
 ## Your agent messed up
 
 Maybe it stopped at a plan when you asked it to build. Maybe it said tests passed when it never ran them. Maybe it ignored a preference you've repeated five times.
