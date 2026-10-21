@@ -251,7 +251,7 @@ The feedback turn is read-only by contract:
 - no mutation before item-scoped approval;
 - verification required after later implementation.
 
-Read the complete [threat model](docs/threat-model.md) and [security policy](SECURITY.md).
+Read the complete [threat model](docs/threat-model.md), [security policy](SECURITY.md) and [privacy policy](PRIVACY.md).
 
 ## Repository map
 

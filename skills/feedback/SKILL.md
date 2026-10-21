@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires the current conversation. Optional read-only access to session history, project instructions, skills, memory, and documentation improves diagnosis. Works without those capabilities by degrading explicitly.
 metadata:
   author: Luchas Arie
-  version: "1.0.0"
+  version: "1.1.0"
   repository: "https://github.com/luchasarie/feedback-loop"
 ---
 

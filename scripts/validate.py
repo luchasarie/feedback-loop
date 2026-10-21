@@ -137,7 +137,7 @@ def validate_metadata(report: Report) -> None:
         except (OSError, json.JSONDecodeError) as exc:
             report.check(False, f"valid JSON: {rel}", str(exc))
             continue
-        report.check(data.get("version") == "1.0.0", f"version pinned: {rel}")
+        report.check(data.get("version") == "1.1.0", f"version pinned: {rel}")
         report.check(data.get("license") == "MIT", f"license declared: {rel}")
     package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
     pi_skills = package.get("pi", {}).get("skills", [])
@@ -167,6 +167,13 @@ def validate_assets(report: Report) -> None:
         report.check(card.stat().st_size < 1_000_000, "social card size under 1MB", str(card.stat().st_size))
     except (OSError, ValueError, struct.error) as exc:
         report.check(False, "valid social-card PNG", str(exc))
+    icon = ROOT / ".claude-plugin" / "icon.png"
+    try:
+        width, height = png_dimensions(icon)
+        report.check(width == height and 512 <= width <= 2048, "plugin icon is square, 512-2048 px", f"{width}x{height}")
+        report.check(icon.stat().st_size < 2_000_000, "plugin icon size under 2MB", str(icon.stat().st_size))
+    except (OSError, ValueError, struct.error) as exc:
+        report.check(False, "valid plugin icon PNG", str(exc))
 
 
 def validate_public_surface(report: Report) -> None:
