@@ -4,7 +4,7 @@
 <defs>
   <linearGradient id="heat" x1="34" y1="40" x2="122" y2="178" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4D5E"/><stop offset="1" stop-color="#FF9A3D"/></linearGradient>
   <linearGradient id="calm" x1="124" y1="70" x2="220" y2="202" gradientUnits="userSpaceOnUse"><stop stop-color="#6EE7D8"/><stop offset="1" stop-color="#55A8FF"/></linearGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <rect width="256" height="256" rx="58" fill="#0A0D14"/>
 <circle cx="76" cy="82" r="52" fill="#FF5C54" opacity=".09"/>
